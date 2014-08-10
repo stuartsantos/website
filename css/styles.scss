@@ -1,0 +1,149 @@
+@import 'reset';
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+@mixin brandon {
+	font-family: $font-serif;
+	font-weight: 400;
+}
+
+$primary: #03c5ee;
+$primary-dark: darken($primary, 15%);
+$secondary: rgb(55, 209, 188);
+$font-sans: "museo-sans", sans-serif;
+$font-serif: "brandon-grotesque",serif;
+$gray: #737373;
+
+html.wf-loading {
+	h1, h2, a, ul, li, h3, h4 {
+		visibility: hidden;
+	}
+}
+
+body  {
+  @include brandon;
+  color: $gray;
+  line-height: 1.3;
+  -webkit-text-size-adjust: 100%;
+}
+.name {
+	width: 100%;
+	background: $primary;
+	color: #fff;
+	text-align: center;
+}
+nav img {
+	border-radius: 50%;
+	max-width: 50px;
+	margin: 10px;
+}
+h1 {
+	font-size: 1.5em;
+	line-height: 3;
+	font-family: $font-sans;
+	vertical-align: top;
+	text-align: center;
+	display: inline;
+}
+h2 {
+	color: $primary;
+	font-family: $font-sans;
+	margin-bottom: .5em;
+	font-size: 1.5em;
+	text-align: center;
+}
+a:link, a:visited, a:active {
+	color: $primary;
+	text-decoration: none;
+	-webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
+    transition: all .2s;
+}
+a:hover {
+	color: $primary-dark;
+}
+.links {
+	margin: 1em;
+	ul {
+		@include flexbox();
+		width: 100%;
+		li {
+			display: inline;
+			-webkit-flex-grow: 1;
+			-moz-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			text-align: center;
+			border: 1px solid $primary;
+			border-right: none;
+			a {
+				text-decoration: none;
+				color: $primary-dark;
+				padding: .25em;
+				display: inline-block;
+				width: 100%;
+				-webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
+    			transition: all .2s;
+    			font-family: $font-sans;
+			}
+			a:hover {
+				color: #fff;
+				background: $secondary;
+			}
+		}
+		li:first-child {
+			border-radius: 2px 0 0 2px;
+		}
+		li:last-child {
+			border-radius: 0 2px 2px 0;
+			border-right: 1px solid $primary;
+		}
+	}
+}
+section {
+	margin: 1em auto;
+	width: 90%;
+	border-bottom: 1px solid $primary-dark;
+	padding-bottom: 1.5em;
+	text-align: center;
+	h3 {
+		font-size: 1.15em;
+		color: $primary-dark;
+		font-family: $font-sans;
+		margin-top: 1em;
+	}
+	h4 {
+		color: $secondary;
+		font-family: $font-sans;
+	}
+	li {
+		margin: 1em;
+		font-size: 1.05em;
+	}
+}
+@media screen and (min-width: 560px) {
+	.links ul li {
+		width: 25%;
+	}
+}
