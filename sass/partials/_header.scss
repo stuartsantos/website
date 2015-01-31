@@ -1,0 +1,87 @@
+/***************Header******************/
+
+.top {
+	width: 100%;
+	background: $primary;
+	color: #fff;
+	text-align: center;
+	box-shadow: 0 -3px 10px rgba(0,0,0,.2) inset;
+  @include breakpoint($tablet) {
+    @include flexbox;
+    text-align: left;
+    align-items: center;
+  }
+  a {
+    color: $primary-dark;
+    display: inline-block;
+    padding: 1em;
+  }
+  .selected {
+    color: #fff;
+    cursor: default;
+  }
+  ul {
+    @include flexbox();
+    width: 100%;
+    li {
+      display: inline;
+      @include flex(1);
+    }
+  }
+}
+.name {
+  @include breakpoint($tablet) {
+    @include flex(2);
+    margin-left: 4em;
+  }
+}
+header img {
+	border-radius: 50%;
+	max-width: 50px;
+	margin: 10px;
+}
+nav {
+  @include breakpoint($tablet) {
+    @include flex(1);
+  }
+}
+.links {
+	margin: 1em;
+	ul {
+		@include flexbox();
+		width: 100%;
+		li {
+			display: inline;
+			@include flex(1);
+			text-align: center;
+			border: 1px solid $primary;
+			border-right: none;
+			@include breakpoint($tablet) {
+				width: 25%;
+			}
+			a {
+				text-decoration: none;
+				color: $primary-dark;
+				padding: .25em;
+				display: inline-block;
+				width: 100%;
+				-webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
+  			transition: all .2s;
+  			font-family: $font-sans;
+			}
+			a:hover {
+				color: #fff;
+				background: $secondary;
+			}
+		}
+		li:first-child {
+			border-radius: 2px 0 0 2px;
+		}
+		li:last-child {
+			border-radius: 0 2px 2px 0;
+			border-right: 1px solid $primary;
+		}
+	}
+}
+
+/***************End Header******************/

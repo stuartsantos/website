@@ -1,0 +1,61 @@
+
+/***************Main******************/
+
+section {
+	margin: 1em auto;
+	width: 90%;
+	border-bottom: 1px solid $primary-dark;
+	padding-bottom: 1.5em;
+	text-align: center;
+  @include breakpoint($tablet) {
+    text-align: left;
+  }
+  &.job, &.school {
+    margin: 0 0 2em;
+    width: 100%;
+    border: none;
+    padding: 0;
+    @include flexbox;
+    div {
+      @include breakpoint($tablet) {
+        @include flex(3);
+        display: inline-block;
+      }
+    }
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+	h3 {
+		font-size: 1.15em;
+		color: $primary-dark;
+		font-family: $font-sans;
+	}
+	h4 {
+		color: $secondary;
+		font-family: $font-sans;
+	}
+	li {
+		margin: 1em;
+		font-size: 1.05em;
+	}
+}
+aside {
+  display: none;
+  @include breakpoint($tablet) {
+    display: inline-block;
+    float: right;
+    @include flex(1);
+  }
+}
+.dates div {
+    display: inline-block;
+    padding: 1em;
+    background: $gray;
+    color: #fff;
+    width: 135px;
+    text-align: center;
+  }
+
+/***************End Main******************/
+

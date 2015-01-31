@@ -1,3 +1,5 @@
+/***************Reset******************/
+/* line 3, ../../sass/partials/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,136 +18,377 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
+/* line 24, ../../sass/partials/_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
+/* line 28, ../../sass/partials/_reset.scss */
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
+/* line 31, ../../sass/partials/_reset.scss */
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
+/* line 34, ../../sass/partials/_reset.scss */
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
+/* line 37, ../../sass/partials/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
+/* line 42, ../../sass/partials/_reset.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
+/****************End Reset**************/
+/***************Global******************/
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-ahaht");
+  src: url("fonts/icomoon.eot?#iefix-ahaht") format("embedded-opentype"), url("fonts/icomoon.woff?-ahaht") format("woff"), url("fonts/icomoon.ttf?-ahaht") format("truetype"), url("fonts/icomoon.svg?-ahaht#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 13, ../../sass/partials/_global.scss */
 * {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
-html.wf-loading h1, html.wf-loading h2, html.wf-loading a, html.wf-loading ul, html.wf-loading li, html.wf-loading h3, html.wf-loading h4 {
-  visibility: hidden; }
-
+/* line 16, ../../sass/partials/_global.scss */
 body {
   font-family: "brandon-grotesque", serif;
   font-weight: 400;
   color: #737373;
   line-height: 1.3;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+}
 
-.name {
-  width: 100%;
-  background: #03c5ee;
-  color: #fff;
-  text-align: center; }
+/* line 22, ../../sass/partials/_global.scss */
+a:link, a:visited, a:active {
+  color: #03c5ee;
+  text-decoration: none;
+  -webkit-transition: all .2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all .2s;
+}
 
-nav img {
-  border-radius: 50%;
-  max-width: 50px;
-  margin: 10px; }
+/* line 28, ../../sass/partials/_global.scss */
+a:hover {
+  color: #0286a2;
+}
 
+/* line 31, ../../sass/partials/_global.scss */
 h1 {
   font-size: 1.5em;
   line-height: 3;
   font-family: "museo-sans", sans-serif;
   vertical-align: top;
   text-align: center;
-  display: inline; }
+  display: inline;
+}
+@media (min-width: 730px) {
+  /* line 31, ../../sass/partials/_global.scss */
+  h1 {
+    text-align: left;
+  }
+}
 
+/* line 42, ../../sass/partials/_global.scss */
 h2 {
   color: #03c5ee;
   font-family: "museo-sans", sans-serif;
   margin-bottom: .5em;
   font-size: 1.5em;
-  text-align: center; }
+  text-align: center;
+}
+@media (min-width: 730px) {
+  /* line 42, ../../sass/partials/_global.scss */
+  h2 {
+    text-align: left;
+  }
+}
 
-a:link, a:visited, a:active {
-  color: #03c5ee;
-  text-decoration: none;
-  -webkit-transition: all .2s;
-  /* For Safari 3.1 to 6.0 */
-  transition: all .2s; }
-
-a:hover {
-  color: #0286a2; }
-
-.links {
-  margin: 1em; }
-  .links ul {
+/***************End Global******************/
+/***************Header******************/
+/* line 3, ../../sass/partials/_header.scss */
+.top {
+  width: 100%;
+  background: #03c5ee;
+  color: #fff;
+  text-align: center;
+}
+@media (min-width: 730px) {
+  /* line 3, ../../sass/partials/_header.scss */
+  .top {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    width: 100%; }
-    .links ul li {
-      display: inline;
-      -webkit-flex-grow: 1;
-      -moz-flex-grow: 1;
-      -ms-flex-grow: 1;
-      flex-grow: 1;
-      text-align: center;
-      border: 1px solid #03c5ee;
-      border-right: none; }
-      .links ul li a {
-        text-decoration: none;
-        color: #0286a2;
-        padding: .25em;
-        display: inline-block;
-        width: 100%;
-        -webkit-transition: all .2s;
-        /* For Safari 3.1 to 6.0 */
-        transition: all .2s;
-        font-family: "museo-sans", sans-serif; }
-      .links ul li a:hover {
-        color: #fff;
-        background: #37d1bc; }
-    .links ul li:first-child {
-      border-radius: 2px 0 0 2px; }
-    .links ul li:last-child {
-      border-radius: 0 2px 2px 0;
-      border-right: 1px solid #03c5ee; }
+    text-align: left;
+    align-items: center;
+  }
+}
+/* line 13, ../../sass/partials/_header.scss */
+.top a {
+  color: #0286a2;
+  display: inline-block;
+  padding: 1em;
+}
+/* line 17, ../../sass/partials/_header.scss */
+.top a.selected {
+  color: #fff;
+  cursor: default;
+}
+/* line 22, ../../sass/partials/_header.scss */
+.top ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+/* line 25, ../../sass/partials/_header.scss */
+.top ul li {
+  display: inline;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
 
+@media (min-width: 730px) {
+  /* line 31, ../../sass/partials/_header.scss */
+  .name {
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    margin-left: 4em;
+  }
+}
+
+/* line 37, ../../sass/partials/_header.scss */
+header img {
+  border-radius: 50%;
+  max-width: 50px;
+  margin: 10px;
+}
+
+@media (min-width: 730px) {
+  /* line 42, ../../sass/partials/_header.scss */
+  nav {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+/* line 47, ../../sass/partials/_header.scss */
+.links {
+  margin: 1em;
+}
+/* line 49, ../../sass/partials/_header.scss */
+.links ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+/* line 52, ../../sass/partials/_header.scss */
+.links ul li {
+  display: inline;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  border: 1px solid #03c5ee;
+  border-right: none;
+}
+@media (min-width: 730px) {
+  /* line 52, ../../sass/partials/_header.scss */
+  .links ul li {
+    width: 25%;
+  }
+}
+/* line 61, ../../sass/partials/_header.scss */
+.links ul li a {
+  text-decoration: none;
+  color: #0286a2;
+  padding: .25em;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all .2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all .2s;
+  font-family: "museo-sans", sans-serif;
+}
+/* line 71, ../../sass/partials/_header.scss */
+.links ul li a:hover {
+  color: #fff;
+  background: #37d1bc;
+}
+/* line 76, ../../sass/partials/_header.scss */
+.links ul li:first-child {
+  border-radius: 2px 0 0 2px;
+}
+/* line 79, ../../sass/partials/_header.scss */
+.links ul li:last-child {
+  border-radius: 0 2px 2px 0;
+  border-right: 1px solid #03c5ee;
+}
+
+/***************End Header******************/
+/***************Main******************/
+/* line 4, ../../sass/partials/_main.scss */
 section {
   margin: 1em auto;
   width: 90%;
   border-bottom: 1px solid #0286a2;
   padding-bottom: 1.5em;
-  text-align: center; }
-  section h3 {
-    font-size: 1.15em;
-    color: #0286a2;
-    font-family: "museo-sans", sans-serif;
-    margin-top: 1em; }
-  section h4 {
-    color: #37d1bc;
-    font-family: "museo-sans", sans-serif; }
-  section li {
-    margin: 1em;
-    font-size: 1.05em; }
+  text-align: center;
+}
+@media (min-width: 730px) {
+  /* line 4, ../../sass/partials/_main.scss */
+  section {
+    text-align: left;
+  }
+}
+/* line 13, ../../sass/partials/_main.scss */
+section.job, section.school {
+  margin: 0 0 2em;
+  width: 100%;
+  border: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@media (min-width: 730px) {
+  /* line 19, ../../sass/partials/_main.scss */
+  section.job div, section.school div {
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    display: inline-block;
+  }
+}
+/* line 26, ../../sass/partials/_main.scss */
+section:last-child {
+  border-bottom: none;
+}
+/* line 29, ../../sass/partials/_main.scss */
+section h3 {
+  font-size: 1.15em;
+  color: #0286a2;
+  font-family: "museo-sans", sans-serif;
+}
+/* line 34, ../../sass/partials/_main.scss */
+section h4 {
+  color: #37d1bc;
+  font-family: "museo-sans", sans-serif;
+}
+/* line 38, ../../sass/partials/_main.scss */
+section li {
+  margin: 1em;
+  font-size: 1.05em;
+}
 
-@media screen and (min-width: 560px) {
-  .links ul li {
-    width: 25%; } }
+/* line 43, ../../sass/partials/_main.scss */
+aside {
+  display: none;
+}
+@media (min-width: 730px) {
+  /* line 43, ../../sass/partials/_main.scss */
+  aside {
+    display: inline-block;
+    float: right;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+/* line 50, ../../sass/partials/_main.scss */
+aside.dates div {
+  display: inline-block;
+  padding: 1em;
+  background: #737373;
+  color: #fff;
+  min-width: 120px;
+}
+
+/***************End Main******************/
+/***************Footer******************/
+/* line 3, ../../sass/partials/_footer.scss */
+footer {
+  border-bottom: none;
+}
+
+/* line 6, ../../sass/partials/_footer.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 20, ../../sass/partials/_footer.scss */
+.icon-mail:before {
+  content: "\ea83";
+}
+
+/* line 24, ../../sass/partials/_footer.scss */
+.icon-twitter2:before {
+  content: "\ea92";
+}
+
+/* line 28, ../../sass/partials/_footer.scss */
+.icon-github:before {
+  content: "\eab1";
+}
+
+/* line 32, ../../sass/partials/_footer.scss */
+.icon-linkedin:before {
+  content: "\eac8";
+}
+
+/***************End Footer******************/
+
+/*# sourceMappingURL=styles.css.map */

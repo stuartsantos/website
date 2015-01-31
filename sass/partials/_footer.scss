@@ -1,0 +1,47 @@
+/***************Footer******************/
+
+footer {
+  border-bottom: none;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: $primary;
+  font-size: 1.5em;
+  margin-right: 1em;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: .25s;
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+.icon-mail:before {
+  content: "\ea83";
+}
+
+.icon-twitter2:before {
+  content: "\ea92";
+}
+
+.icon-github:before {
+  content: "\eab1";
+}
+
+.icon-linkedin:before {
+  content: "\eac8";
+}
+
+.contact {
+  margin-top: 1em;
+}
+
+/***************End Footer******************/
