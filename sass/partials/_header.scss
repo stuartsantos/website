@@ -15,6 +15,10 @@
     color: $primary-dark;
     display: inline-block;
     padding: 1em;
+    transition: .25s;
+    &:hover {
+    	color: #fff;
+    }
   }
   .selected {
     color: #fff;
@@ -68,6 +72,7 @@ nav {
 				-webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
   			transition: all .2s;
   			font-family: $font-sans;
+  			font-size: .9em;
 			}
 			a:hover {
 				color: #fff;
