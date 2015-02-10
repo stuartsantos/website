@@ -1,0 +1,17 @@
+.note {
+	margin-bottom: 2em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p.intro {
+	font-size: 1.5em;
+	color: $secondary;
+	font-family: $font-sans;
+}
+
+h1.sectionTitle {
+	font-size: 2em;
+	color: $primary;
+}
