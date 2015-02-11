@@ -36,8 +36,8 @@ module.exports = function(grunt) {
         },                                // Target
         files: [{                                  // Dictionary of files
           expand: true,
-          cwd: 'html/',                             // Project root
-          src: '*.html',                        // Source
+          cwd: 'html',                             // Project root
+          src: ['*.html', '**/*.html'],                        // Source
           dest: 'min/'                            // Destination
         }]
       }
@@ -72,10 +72,10 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['sass/*.scss', 'sass/**/*.scss', 'config.rb'],
-        tasks: ['compass', 'criticalcss']
+        tasks: ['compass']
       },
       html: {
-        files: ['html/*.html'],
+        files: ['html/*.html', 'html/**/*.html'],
         tasks: ['htmlmin']
       }
     }

@@ -1,3 +1,16 @@
+.reading-wrapper {
+  width: 50%;
+}
+
+.notes {
+	margin-top: 2em;
+	a {
+		border-bottom: 1px solid;
+		margin-bottom: .5em;
+		display: inline-block;
+	}
+}
+
 .note {
 	margin-bottom: 2em;
 	&:last-child {
