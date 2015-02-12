@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Stuart Santos | Web Developer | Web Designer</title>
-  <link href="img/favicon.ico" rel="shortcut icon">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="../img/favicon.ico" rel="shortcut icon">
+  <link rel="stylesheet" href="../css/styles.css">
   <meta name="description" content="This is the website of Stuart Santos, a web developer and designer with a background in Front End Development, UX, and UI work.">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" async></script>
@@ -19,7 +19,7 @@
       return script;
     }
 
-    loadJS("js/scripts.min.js");
+    loadJS("../js/scripts.min.js");
   </script>
   <script type="text/javascript">
     (function(d) {
@@ -46,39 +46,26 @@
 	<header>
     <div class="top">
       <div class="name">
-        <img src="img/profile.jpg" alt="Picture of Stuart Santos">
+        <img src="../img/profile.jpg" alt="Picture of Stuart Santos">
         <h1>Stuart Santos</h1>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Resume</a></li>
-          <li><a href="notes.html">Notes</a></li>
-          <li><a href="#" class="selected">My Work</a></li>
+          <li><a href="../index.html">Resume</a></li>
+          <li><a href="../notes.html">Notes</a></li>
+          <li><a href="../work.html">My Work</a></li>
         </ul>
       </nav>
     </div>
   </header>
 	<main>
     <section class="reading-wrapper">
-      <h1 class="sectionTitle">My Work</h1>
-      <p class="intro">I have consolidated a variety of projects that showcase different coding abilities in this area. Please contact me if you'd like any additional examples</p>
-      <div class="work">
-        <div class="note">
-          <h3>Flexbox</h3>
-          <p>This is a very short note about working with flexbox and some quirks that may show up. It is specifically relevant if you have to support Blackberry 7 since this issue arises for that legacy platform.</p>
-        </div>
-        <div class="note">
-          <h3>Gruntfile.js Template</h3>
-          <p>Starting a new project or repository usually requires the monotony of setting up some base files that help with your workflow. This is my standard Gruntfile.js file that I use as a template for setting up new projects which covers some of the most common tasks I use in everyday coding.</p>
-        </div>
-        <div class="note">
-          <h3>Git Basics</h3>
-          <p>Just some basic notes about working with Git to keep track of commonly used commands.</p>
-        </div>
-        <div class="note">
-          <h3>Working with Swift</h3>
-          <p>Since this is one of the newest languages I'm currently working with, I thought it would be a good exercise to write down as much of the important points as I can to help with material retention.</p>
-        </div>
+      <h1 class="sectionTitle">Switching Default Search (note to self)</h1>
+      <div class="notes">
+        <p>As an American living in the UK, Chrome seems hell-bent on switching my default search engine from google.com to google.co.uk. Being the patriot that I am, I often find myself needing to switch it back after Chrome has surreptitiously changed my locale. Here is how you do it:</p>
+        <p>If you have a Mac, go to Library/Application Support/Google/Chrome/Default/Preferences and search for "last_known_google_url" and change it to the following:</p>
+        <code>"last_known_google_url": "https://www.google.com/"</code>
+        <p>Then that's it, you're done! Just quit out of Chrome and fire it back up and you should find that your default search engine and omnibox results will default to google.com or whatever country code you put in.</p>
       </div>
     </section>
   </main>

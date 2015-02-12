@@ -5,9 +5,11 @@
 .notes {
 	margin-top: 2em;
 	a {
-		border-bottom: 1px solid;
 		margin-bottom: .5em;
 		display: inline-block;
+	}
+	p {
+		margin-bottom: 2em;
 	}
 }
 
@@ -26,5 +28,6 @@ p.intro {
 
 h1.sectionTitle {
 	font-size: 2em;
-	color: $primary;
+	color: $primary-dark;
+	line-height: 2;
 }

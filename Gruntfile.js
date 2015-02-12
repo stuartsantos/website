@@ -68,7 +68,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['js/*.js'],
-        tasks: ['uglify']
+        tasks: ['newer:uglify']
       },
       css: {
         files: ['sass/*.scss', 'sass/**/*.scss', 'config.rb'],
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['html/*.html', 'html/**/*.html'],
-        tasks: ['htmlmin']
+        tasks: ['newer:htmlmin']
       }
     }
   });
@@ -87,6 +87,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-criticalcss');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-newer');
 
 
   // Default task(s).
