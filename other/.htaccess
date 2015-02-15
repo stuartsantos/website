@@ -46,3 +46,8 @@ ExpiresDefault "access 1 month"
   Header append Vary User-Agent
 </IfModule>
 AddDefaultCharset UTF-8
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.html -f 
+RewriteRule ^(.*)$ $1.html

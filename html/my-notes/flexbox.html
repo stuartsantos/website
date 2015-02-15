@@ -61,28 +61,46 @@
 	<main>
     <section class="reading-wrapper">
       <h1 class="sectionTitle">Flexbox</h1>
-      <p class="intro">This section is devoted to my development notes where I keep track of things like my workflow, templates, and code fixes. It is not meant to be a blog, but as an overview of things for me to keep in mind to help me or anyone else with future projects.</p>
       <div class="notes">
-        <div class="note">
-          <h3>Flexbox</h3>
-          <p>This is a very short note about working with flexbox and some quirks that may show up. It is specifically relevant if you have to support Blackberry 7 since this issue arises for that legacy platform.</p>
-        </div>
-        <div class="note">
-          <h3>Gruntfile.js Template</h3>
-          <p>Starting a new project or repository usually requires the monotony of setting up some base files that help with your workflow. This is my standard Gruntfile.js file that I use as a template for setting up new projects which covers some of the most common tasks I use in everyday coding.</p>
-        </div>
-        <div class="note">
-          <h3>Git Basics</h3>
-          <p>Just some basic notes about working with Git to keep track of commonly used commands.</p>
-        </div>
-        <div class="note">
-          <h3>Working with Swift</h3>
-          <p>Since this is one of the newest languages I'm currently working with, I thought it would be a good exercise to write down as much of the important points as I can to help with material retention.</p>
-        </div>
+        <p>Flexbox is an incredible CSS property that makes web design and layout so much simpler to work with. However, since it's a relatively new addition to the CSS tool set, you can find that certain browsers and devices act a bit strange when you start using it. I added flexbox to the CSS we use for all of our AIG Consumer websites to help with layout and positioning of elements on the page irrespective of DOM order.</p>
+        <p>There are two key things to keep in mind when using the flexbox propery. First of all, you want to remove all floats that may be present in your initial CSS. When you set a flex container and the child elements are floated, you get some really strange behavior or it doesn't do anything at all.</p>
+        <p>The second important issue to keep in mind is if you have to support the Blackberry 7 browser. For whatever reason, flexbox is supported, however it does not allow the use of row wrapping. Instead, you should be declaring the orientation and direction of your flex container to be <strong>vertical</strong> and <strong>column</strong>. </p>
+        <p>Once you have all that set in place, it should be relatively easy to style the layout of your page. You can see below the code we finally used to make sure the flex ordering and wrapping worked propely. Unfortunately, the CMS we use at AIG auto-ouputs the center grid elements after the right grid elements, so we needed a way to reorder the DOM elements for mobile so that the less important right grid information came later in the page.</p>
+        <code>
+          #grid_wrapper {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 100%;
+          }
+          #gridRight {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 2;
+            -webkit-order: 2;
+            order: 2; 
+            width: 100%;
+            padding-left: 0;
+            float: none;
+          }
+          #gridCenter {
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -ms-flex-order: 1;
+            -webkit-order: 1;
+            order: 1;
+          }
+        </code> 
       </div>
-    </section>
-    <section class="reading-wrapper">
-      <h1 class="sectionTitle">Books I've Read</h1>
     </section>
   </main>
   <footer>

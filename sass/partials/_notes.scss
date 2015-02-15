@@ -1,5 +1,7 @@
 .reading-wrapper {
-  width: 50%;
+	@include breakpoint($desktop) {
+		width: 50%;
+	}
 }
 
 .notes {
@@ -21,7 +23,7 @@
 }
 
 p.intro {
-	font-size: 1.5em;
+	font-size: 1.15em;
 	color: $secondary;
 	font-family: $font-sans;
 }
