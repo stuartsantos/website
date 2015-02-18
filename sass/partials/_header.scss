@@ -12,17 +12,18 @@
     align-items: center;
   }
   a {
-    color: $primary-dark;
+    color: #fff;
     display: inline-block;
-    padding: 1em;
+    padding: 1em 1em .5em 1em;
     transition: .25s;
     &:hover {
-    	color: #fff;
+    	color: #eee;
     }
   }
   .selected {
     color: #fff;
     cursor: default;
+    border-bottom: 2px solid #fff;
   }
   ul {
     @include flexbox();
