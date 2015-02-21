@@ -16,9 +16,9 @@ module.exports = function(grunt) {
             dest: 'min/js',   // Destination path prefix.
             ext: '.min.js',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
-          },
-        ],
-      },
+          }
+        ]
+      }
     },
     compass: {
       dist: {
@@ -62,10 +62,23 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      options: {
-        livereload: true,
+    browserSync: {
+      bsFiles: {
+        src : [
+          'html/*.html',
+          'html/**/*.html',
+          'js/*.js',
+          'sass/*.scss',
+          'sass/**/*.scss',
+          'config.rb'
+        ]
       },
+      options: {
+          watchTask: true,
+          server: './min'
+      }
+    },
+    watch: {
       js: {
         files: ['js/*.js'],
         tasks: ['newer:uglify']
@@ -86,11 +99,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-criticalcss');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-newer');
-
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   // Default task(s).
-  grunt.registerTask('default', ['connect','watch']);
+  grunt.registerTask('default', ['browserSync','watch']);
 
 };
