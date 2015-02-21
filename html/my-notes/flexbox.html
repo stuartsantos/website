@@ -40,7 +40,7 @@
     ga('send', 'pageview');
 
   </script>
-  
+
 </head>
 <body>
 	<header>
@@ -62,10 +62,10 @@
     <section class="reading-wrapper">
       <h1 class="sectionTitle">Flexbox</h1>
       <div class="notes">
-        <p>Flexbox is an incredible CSS property that makes web design and layout so much simpler to work with. However, since it's a relatively new addition to the CSS tool set, you can find that certain browsers and devices act a bit strange when you start using it. I added flexbox to the CSS we use for all of our AIG Consumer websites to help with layout and positioning of elements on the page irrespective of DOM order.</p>
-        <p>There are two key things to keep in mind when using the flexbox propery. First of all, you want to remove all floats that may be present in your initial CSS. When you set a flex container and the child elements are floated, you get some really strange behavior or it doesn't do anything at all.</p>
-        <p>The second important issue to keep in mind is if you have to support the Blackberry 7 browser. For whatever reason, flexbox is supported, however it does not allow the use of row wrapping. Instead, you should be declaring the orientation and direction of your flex container to be <strong>vertical</strong> and <strong>column</strong>. </p>
-        <p>Once you have all that set in place, it should be relatively easy to style the layout of your page. You can see below the code we finally used to make sure the flex ordering and wrapping worked propely. Unfortunately, the CMS we use at AIG auto-ouputs the center grid elements after the right grid elements, so we needed a way to reorder the DOM elements for mobile so that the less important right grid information came later in the page.</p>
+        <p>Flexbox is a convenient CSS property that makes web design and layout a much simpler process. However, since it's a relatively new addition to the CSS tool set, you will find that certain browsers and devices act a bit strange when you start using it. Even with that caveat, I added flexbox to the CSS we use for all of our AIG Consumer websites to help with layout and positioning of elements on the page irrespective of DOM order at mobile breakpoints.</p>
+        <p>There are two key things to keep in mind when using the flexbox propery. First of all, if your CSS code is not mobile first, you want to remove all floats that may be present at the desktop breakpoints. If you were to set a flex container and the child elements are floated, you get some really strange behavior with element positioning.</p>
+        <p>The second important issue deals mainly with Blackberry 7 browser support. Strangely, the flexbox property is supported, however the quirk with Blackberry is that it ignores the flex declaration if you have set the child elements to row wrap. In order to remedy this situation, you should be declaring the orientation and direction of your flex container to be <strong>vertical</strong> and <strong>column</strong>. </p>
+        <p>Once you have all that set in place, it should be relatively easy to style the layout of your page. You can see the code we finally used below to make sure the flex ordering and wrapping worked propely since our CMS ouputs the center grid element after the right grid element in the HTML.</p>
         <code>
           #grid_wrapper {
             display: -webkit-box;
@@ -87,7 +87,7 @@
             -moz-box-ordinal-group: 2;
             -ms-flex-order: 2;
             -webkit-order: 2;
-            order: 2; 
+            order: 2;
             width: 100%;
             padding-left: 0;
             float: none;
@@ -99,12 +99,12 @@
             -webkit-order: 1;
             order: 1;
           }
-        </code> 
+        </code>
       </div>
     </section>
   </main>
   <footer>
-    <section class="reading-wrapper">&copy; 2014 Stuart Santos 
+    <section class="reading-wrapper">&copy; 2015 Stuart Santos
       <div class="contact">
         <a href="mailto:santos.stuart@gmail.com"><span class="icon-mail"></span></a>
         <a href="https://twitter.com/stuartesantos"><span class="icon-twitter2"></span></a>
