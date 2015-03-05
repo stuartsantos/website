@@ -39,26 +39,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-    criticalcss: {
-      custom: {
-        options: {
-          url: "http://localhost:4000",
-          width: 1200,
-          height: 900,
-          outputfile: "min/css/critical.css",
-          filename: "min/css/styles.css",
-          buffer: 800*1024
-        }
-      }
-    },
-    connect: {
-      server: {
-        options: {
-          port: 4000,
-          hostname: 'localhost'
-        }
-      }
-    },
     browserSync: {
       bsFiles: {
         src : [
