@@ -39,6 +39,26 @@ module.exports = function(grunt) {
         }]
       }
     },
+    criticalcss: {
+      custom: {
+        options: {
+          url: "http://localhost:4000",
+          width: 1200,
+          height: 900,
+          outputfile: "min/css/critical.css",
+          filename: "min/css/styles.css",
+          buffer: 800*1024
+        }
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 4000,
+          hostname: 'localhost'
+        }
+      }
+    },
     browserSync: {
       bsFiles: {
         src : [
@@ -62,7 +82,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['sass/*.scss', 'sass/**/*.scss', 'config.rb'],
-        tasks: ['compass']
+        tasks: ['compass', 'criticalcss']
       },
       html: {
         files: ['html/*.html', 'html/**/*.html'],
@@ -76,9 +96,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-criticalcss');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['browserSync','watch']);
+  grunt.registerTask('default', ['connect','watch']);
 
 };
