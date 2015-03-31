@@ -1,0 +1,29 @@
+.project {
+    position: relative;
+    width: 350px;
+}
+
+.preview {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.title {
+    font-family: $font-sans;
+    font-weight: 900;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    padding: 1em;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,.9);
+}
+
+.centered {
+    top: 25%;
+    position: relative;
+}
