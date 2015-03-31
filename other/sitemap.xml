@@ -9,17 +9,51 @@
 <url>
   <loc>http://stuartsantos.com/</loc>
   <lastmod>2015-02-14T10:23:01+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://stuartsantos.com/notes</loc>
-  <lastmod>2015-02-15T15:35:59+00:00</lastmod>
+  <lastmod>2015-03-31T06:09:33+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://stuartsantos.com/my-notes/flexbox</loc>
-  <lastmod>2015-02-15T15:31:58+00:00</lastmod>
+  <lastmod>2015-03-31T06:09:57+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/my-notes/gruntfile</loc>
+  <lastmod>2015-03-31T06:13:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/my-notes/git</loc>
+  <lastmod>2015-03-31T06:09:50+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/my-notes/retina</loc>
+  <lastmod>2015-03-31T06:09:49+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/my-notes/css-font-properties</loc>
+  <lastmod>2015-03-31T06:09:49+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://stuartsantos.com/my-notes/google</loc>
-  <lastmod>2015-02-15T11:41:30+00:00</lastmod>
+  <lastmod>2015-03-31T06:09:55+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/index.html</loc>
+  <lastmod>2015-02-14T10:23:01+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://stuartsantos.com/notes.html</loc>
+  <lastmod>2015-03-31T06:09:33+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 </urlset>

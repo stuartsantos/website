@@ -16,10 +16,10 @@
 }
 
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-  -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
-  -webkit-order: $val;  
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
   order: $val;
 }
 
@@ -40,7 +40,7 @@ $font-sans: "p22-underground", sans-serif;
 $font-serif: "museo", serif;
 
 //breakpoints
-$sub-tablet: 401px;
+$sub-tablet: 590px;
 $tablet: 730px;
 $sub-desktop: 850px;
 $desktop: 981px;

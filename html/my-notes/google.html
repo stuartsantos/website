@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Stuart Santos | Web Developer | Web Designer</title>
+  <title>Switching local google search back to google.com | Stuart Santos</title>
   <link href="../img/favicon.ico" rel="shortcut icon">
   <link rel="stylesheet" href="../css/styles.css">
   <meta name="description" content="Google can be quite annoying in changing your locale against your will. This post is to show you how you can override that change on your Mac.">
@@ -46,26 +46,29 @@
 	<header>
     <div class="top">
       <div class="name">
-        <img src="../img/profile.jpg" alt="Picture of Stuart Santos">
+        <img srcset="../img/profile.jpg 2x, ../img/profile-small.jpg 1x" src="../img/profile-small.jpg" alt="Picture of Stuart Santos">
         <h1>Stuart Santos</h1>
       </div>
       <nav>
         <ul>
           <li><a href="/">Resume</a></li>
           <li><a href="../notes">Notes</a></li>
-          <li><a href="../work">My Work</a></li>
         </ul>
       </nav>
     </div>
   </header>
 	<main>
     <section class="reading-wrapper">
-      <h1 class="sectionTitle">Switching Default Search (note to self)</h1>
+      <h1 class="sectionTitle">Switching Default Search (Updated)</h1>
       <div class="notes">
         <p>As an American living in the UK, Chrome seems hell-bent on switching my default search engine from google.com to google.co.uk. Being the patriot that I am, I often find myself needing to switch it back after Chrome has surreptitiously changed my locale. Here is how you do it:</p>
         <p>If you have a Mac, go to Library/Application Support/Google/Chrome/Default/Preferences and search for "last_known_google_url" and change it to the following:</p>
-        <code>"last_known_google_url": "https://www.google.com/"</code>
+<!-- htmlmin:ignore -->
+<code>"last_known_google_url": "https://www.google.com/"</code>
+<!-- htmlmin:ignore -->
         <p>Then that's it, you're done! Just quit out of Chrome and fire it back up and you should find that your default search engine and omnibox results will default to google.com or whatever country code you put in.</p>
+        <h2>Update (3/11/15)</h2>
+        <p>It seems that since I had first posted this, Chrome has gotten very angry if you try to edit that Preferences file. So instead, if you put <a href="http://www.google.com/ncr">http://www.google.com/ncr</a> into the omnibox, that will take you to google.com's search page. After you do that, try a search in there and then quit out of Chrome. Here's where I'm not sure when or how it updates, but you just have to fire up Chrome again and try searching in the omnibox for something. If you're still seeing the local version, rinse and repeat with the URL mentioned above and it should eventually take within about 3 or 5 restarts of Chrome.</p>
       </div>
     </section>
   </main>

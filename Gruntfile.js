@@ -5,11 +5,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       dynamic_mappings: {
+        // Grunt will search for "**/*.js" under "lib/" when the "uglify" task
+        // runs and build the appropriate src-dest file mappings then, so you
+        // don't need to update the Gruntfile when files are added or removed.
         files: [
           {
             expand: true,     // Enable dynamic expansion.
-            cwd: 'js',        // Src matches are relative to this path.
-            src: ['*.js'],    // Actual pattern(s) to match.
+            cwd: 'js',      // Src matches are relative to this path.
+            src: ['*.js'], // Actual pattern(s) to match.
             dest: 'min/js',   // Destination path prefix.
             ext: '.min.js',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
@@ -25,17 +28,17 @@ module.exports = function(grunt) {
         }
       }
     },
-    htmlmin: {
+    htmlmin: {                                     // Task
       multiple: {
-        options: {
+        options: {                                 // Target options
           removeComments: true,
           collapseWhitespace: true
-        },
-        files: [{
+        },                                // Target
+        files: [{                                  // Dictionary of files
           expand: true,
-          cwd: 'html',
-          src: ['*.html', '**/*.html'],
-          dest: 'min/'
+          cwd: 'html',                             // Project root
+          src: ['*.html', '**/*.html'],                        // Source
+          dest: 'min/'                            // Destination
         }]
       }
     },
@@ -46,7 +49,7 @@ module.exports = function(grunt) {
           width: 1200,
           height: 900,
           outputfile: "min/css/critical.css",
-          filename: "min/css/styles.css",
+          filename: "min/css/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
           buffer: 800*1024
         }
       }
@@ -55,24 +58,8 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 4000,
-          hostname: 'localhost'
+          hostname: 'localhost',
         }
-      }
-    },
-    browserSync: {
-      bsFiles: {
-        src : [
-          'html/*.html',
-          'html/**/*.html',
-          'js/*.js',
-          'sass/*.scss',
-          'sass/**/*.scss',
-          'config.rb'
-        ]
-      },
-      options: {
-          watchTask: true,
-          server: './min'
       }
     },
     watch: {
@@ -82,11 +69,25 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['sass/*.scss', 'sass/**/*.scss', 'config.rb'],
-        tasks: ['compass', 'criticalcss']
+        tasks: ['compass']
       },
       html: {
         files: ['html/*.html', 'html/**/*.html'],
         tasks: ['newer:htmlmin']
+      }
+    },
+    browserSync: {
+      bsFiles: {
+        src : [
+          'min/html/*.html',
+          'min/html/**/*.html',
+          'min/js/*.js',
+          'min/css/*.css'
+        ]
+      },
+      options: {
+          watchTask: true,
+          server: './min'
       }
     }
   });
@@ -95,11 +96,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-criticalcss');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['connect','watch']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('critical', ['connect', 'criticalcss']);
 
 };

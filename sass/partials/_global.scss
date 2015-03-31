@@ -57,17 +57,24 @@ h2 {
 code {
   font-family: monospace;
   background: #ddd;
-  padding: 2em;
+  padding: 1em;
   border-radius: 3px;
   display: inline-block;
   margin-bottom: 2em;
   white-space: pre;
   max-width: 100%;
   overflow: auto;
+  .highlight {
+    color: $primary;
+  }
 }
 
 strong {
   font-weight: 700;
+}
+
+em {
+  font-style: italic;
 }
 
 /***************End Global******************/

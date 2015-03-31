@@ -5,7 +5,7 @@
   <title>Stuart Santos | Web Developer | Web Designer</title>
   <link href="../img/favicon.ico" rel="shortcut icon">
   <link rel="stylesheet" href="../css/styles.css">
-  <meta name="description" content="This is the website of Stuart Santos, a web developer and designer with a background in Front End Development, UX, and UI work.">
+  <meta name="description" content="Just some basic notes about working with Git to keep track of commonly used commands.">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" async></script>
   <script type="text/javascript">
@@ -46,43 +46,60 @@
 	<header>
     <div class="top">
       <div class="name">
-        <img src="../img/profile.jpg" alt="Picture of Stuart Santos">
+        <img srcset="../img/profile.jpg 2x, ../img/profile-small.jpg 1x" src="../img/profile-small.jpg" alt="Picture of Stuart Santos">
         <h1>Stuart Santos</h1>
       </div>
       <nav>
         <ul>
           <li><a href="../index.html">Resume</a></li>
           <li><a href="../notes.html">Notes</a></li>
-          <li><a href="../work.html">My Work</a></li>
         </ul>
       </nav>
     </div>
   </header>
 	<main>
     <section class="reading-wrapper">
-      <h1 class="sectionTitle">Flexbox</h1>
-      <p class="intro">This section is devoted to my development notes where I keep track of things like my workflow, templates, and code fixes. It is not meant to be a blog, but as an overview of things for me to keep in mind to help me or anyone else with future projects.</p>
+      <h1 class="sectionTitle">Git Basics</h1>
       <div class="notes">
-        <div class="note">
-          <h3>Flexbox</h3>
-          <p>This is a very short note about working with flexbox and some quirks that may show up. It is specifically relevant if you have to support Blackberry 7 since this issue arises for that legacy platform.</p>
-        </div>
-        <div class="note">
-          <h3>Gruntfile.js Template</h3>
-          <p>Starting a new project or repository usually requires the monotony of setting up some base files that help with your workflow. This is my standard Gruntfile.js file that I use as a template for setting up new projects which covers some of the most common tasks I use in everyday coding.</p>
-        </div>
-        <div class="note">
-          <h3>Git Basics</h3>
-          <p>Just some basic notes about working with Git to keep track of commonly used commands.</p>
-        </div>
-        <div class="note">
-          <h3>Working with Swift</h3>
-          <p>Since this is one of the newest languages I'm currently working with, I thought it would be a good exercise to write down as much of the important points as I can to help with material retention.</p>
-        </div>
+        <p>When I started getting involved with more complex front-end development work, I was staunchly against using the terminal for anything. I would seek out programs that would allow me to interact with services like GitHub through a graphical user interface rather than having to use the command line. It made no sense to me at the time why anyone would use the command line to carry out any task whatsoever. It seemed like it would be impossible to be more efficient by typing in commands and having to remember folder structures and filenames. However, once I got deeper and deeper into front-end work, it became apparent that in order to fully utilize tools such as GruntJS and Git, (which provided invaluable efficiencies in my overall workflow), I would need to practice my command line skills.</p>
+        <p>This post just outlines a few git commands I use within Terminal on a regular basis and is by no means a comprehensive overview of everything you can do with Git. The first thing to start off with is having an existing Git project on your local machine and syncing it up with a new repository on GitHub.</p>
+        <h2>Adding an existing git project to GitHub</h2>
+        <p>If you already have a project on your computer that has been initialized with git, then you're already halfway there. After you're done adding your files to staging and have created your first commit, go to <a href="http://github.com">GitHub</a> and create a new repository. After navigating to your repository page on GitHub, you will need to copy the URL in the address bar.</p>
+        <p>After you've copied the URL, you can go back to Terminal and navigate to the root of your git project. Once there, put the following commands into the Terminal:</p>
+<!-- htmlmin:ignore -->
+<code>git remote add origin remote <span class="highlight">repository URL</span></code>
+<!-- htmlmin:ignore -->
+        <p>After that, then just verify with the below command:</p>
+<!-- htmlmin:ignore -->
+<code>git remote -v</code>
+<!-- htmlmin:ignore -->
+        <p>Lastly, push your first commit to the remote repository and then you should see the changes up on GitHub:</p>
+<!-- htmlmin:ignore -->
+<code>git push origin master</code>
+<!-- htmlmin:ignore -->
+        <p>The last bit of code can also be used in future pushes to send your changes to GitHub when you have new commits.</p>
+        <h2>Adding and committing</h2>
+        <p>One of the most common tasks you will do with git is add altered documents to staging and then commit those changes. I haven't yet found a reason for myself to add only specific files to a commit, so I always just add all files to each commit. I used to do these in separate add and commit commands in the beginning, but there's a much easier way to go about this with both adding and committing all in the same command:</p>
+<!-- htmlmin:ignore -->
+<code>git commit -a -m "<span class="highlight">your title here</span>" -m "<span class="highlight">your description here</span>"</code>
+<!-- htmlmin:ignore -->
+        <p>This line of code is essentially completing the two tasks in one command. You are automatically pushing all of your changes into the commit with the "-a" argument and then you are adding both the commit title and description with the two "-m" arguments.</p>
+        <h2>Pushing your commits to GitHub</h2>
+        <p>So once you've made your commit, you're happy with the current state of your files, and you're ready to push the changes to GitHub, you'll need a command in order to facilitate the transfer of those changes to your remote repository. This is actually quite simple and was mentioned earlier in this note:</p>
+<!-- htmlmin:ignore -->
+<code>git push origin master</code>
+<!-- htmlmin:ignore -->
+        <p>And there you go, you're done! All of your changes will be pushed to GitHub and the commit will be synced with your remote repository. The only thing to keep in mind before doing this, (or before starting to edit your files in the first place), is to check the status of the repository using:</p>
+<!-- htmlmin:ignore -->
+<code>git status</code>
+<!-- htmlmin:ignore -->
+        <p>This will enable you to make sure that you are either up to date with the remote repository on GitHub or that you are ahead of it and ready to push your changes to GitHub. If you find that your local repository is behind the remote repository you can use:</p>
+<!-- htmlmin:ignore -->
+<code>git pull</code>
+<!-- htmlmin:ignore -->
+        <p>Once you execute that command in Terminal, it will pull all of the changes from the most up to date commit so you can be sure you are working on the most recent files.</p>
+        <p>That's it and I hope this post helps others as much as it helps to remind me of what to do when working with Git.</p>
       </div>
-    </section>
-    <section class="reading-wrapper">
-      <h1 class="sectionTitle">Books I've Read</h1>
     </section>
   </main>
   <footer>
