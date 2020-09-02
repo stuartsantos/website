@@ -46,8 +46,6 @@
   Header append Vary User-Agent
 </IfModule>
 
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-
 AddDefaultCharset UTF-8
 
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
