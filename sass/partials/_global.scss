@@ -39,7 +39,7 @@ h1 {
   vertical-align: top;
   text-align: center;
   display: inline;
-  @include breakpoint($tablet) {
+  @include breakpoint(tablet) {
     text-align: left;
   }
 }
@@ -49,7 +49,7 @@ h2 {
   margin-bottom: .5em;
   font-size: 1.5em;
   text-align: center;
-  @include breakpoint($tablet) {
+  @include breakpoint(tablet) {
     text-align: left;
   }
 }

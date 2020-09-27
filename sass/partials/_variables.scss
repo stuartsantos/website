@@ -28,10 +28,30 @@
 	font-weight: 300;
 }
 
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
 //colors
-$primary: #0c88d7;
+$primary: #0066d7;
 $primary-dark: darken($primary, 15%);
-$secondary: rgb(55, 209, 188);
+$secondary: rgb(11, 115, 101);
 $gray: #737373;
 $dark-gray: darken($gray, 10%);
 
@@ -40,7 +60,10 @@ $font-sans: "p22-underground", sans-serif;
 $font-serif: "museo", serif;
 
 //breakpoints
-$sub-tablet: 590px;
-$tablet: 730px;
-$sub-desktop: 850px;
-$desktop: 981px;
+$breakpoints: (
+  'sub-tablet':  590px,
+  'tablet': 730px,
+  'sub-desktop':  850px,
+  'desktop':  981px
+) !default;
+

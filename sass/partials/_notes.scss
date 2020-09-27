@@ -1,13 +1,13 @@
 .reading-wrapper {
-	@include breakpoint($sub-tablet) {
+	@include breakpoint(sub-tablet) {
 		width: 75%;
 	}
-	@include breakpoint($tablet) {
+	@include breakpoint(tablet) {
 		width: 65%;
 		font-size: 1.15em;
 		line-height: 1.4;
 	}
-	@include breakpoint($desktop) {
+	@include breakpoint(desktop) {
 		width: 50%;
 		font-size: 1.2em;
 		letter-spacing: .01rem;
