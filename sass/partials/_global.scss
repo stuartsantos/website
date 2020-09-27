@@ -32,7 +32,7 @@ a:link, a:visited, a:active {
 a:hover {
   color: $primary-dark;
 }
-h1 {
+h1, .fullname {
   font-size: 1.5em;
   line-height: 3;
   font-family: $font-sans;
