@@ -21,6 +21,22 @@
 	}
 }
 
+.breadcrumbs {
+    font-size: .8em;
+    margin-bottom: 1em;
+    li {
+    	display: inline;
+    	margin: 0;
+    	&:after {
+    		content: '>';
+    		margin: 0 .5em;
+    	}
+    	&:last-child:after {
+    		content: '';
+    	}
+    }
+}
+
 .notes {
 	margin-top: 2em;
 	p {
