@@ -26,3 +26,33 @@ $('a[href*="#"]')
       }
     }
   });
+
+//show nav as stick on scroll up
+
+// should start at 0
+
+// $(window).scroll(function() {
+//     var scroll = $(window).scrollTop();
+//     if(scroll < position && scroll >= 107) {
+//         $('.top').addClass('sticky');
+//     } else {
+//          $('.top').removeClass('sticky');
+//     }
+//     position = scroll;
+// });
+
+var p = $('.top');
+
+var position = $(window).scrollTop(); 
+
+$(window).scroll(function() {
+    var e = $(window).scrollTop()
+      , t = p.height()/2;
+    if (e > position && e > t) {
+      p.addClass('scroll-up');
+    }
+    else {
+      p.removeClass('scroll-up');
+    }
+    position = e;
+});

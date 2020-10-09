@@ -1,4 +1,37 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>My work | Stuart Santos</title><link href="img/favicon.ico" rel="shortcut icon"><link rel="stylesheet" href="css/styles.css"><meta name="description" content="This is a small showcase of some projects that I've worked on during my career in front-end development."><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="/js/scripts.min.js" async></script><script type="text/javascript">(function(d) {
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>My work | Stuart Santos</title><link href="img/favicon.ico" rel="shortcut icon"><link rel="stylesheet" href="css/styles.css"><meta name="description" content="This is a small showcase of some projects that I've worked on during my career in front-end development."><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><script>/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+    (function( w ){
+      var loadJS = function( src, cb, ordered ){
+        "use strict";
+        var tmp;
+        var ref = w.document.getElementsByTagName( "script" )[ 0 ];
+        var script = w.document.createElement( "script" );
+
+        if (typeof(cb) === 'boolean') {
+          tmp = ordered;
+          ordered = cb;
+          cb = tmp;
+        }
+
+        script.src = src;
+        script.async = !ordered;
+        ref.parentNode.insertBefore( script, ref );
+
+        if (cb && typeof(cb) === "function") {
+          script.onload = cb;
+        }
+        return script;
+      };
+      // commonjs
+      if( typeof module !== "undefined" ){
+        module.exports = loadJS;
+      }
+      else {
+        w.loadJS = loadJS;
+      }
+    }( typeof global !== "undefined" ? global : this ));
+
+    loadJS('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', true);
+    loadJS('/js/scripts.min.js', true);</script><script type="text/javascript">(function(d) {
       var config = {
         kitId: 'mte7xac',
         scriptTimeout: 3000
@@ -10,4 +43,4 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-51744150-1', 'auto');
-    ga('send', 'pageview');</script></head><body><header><div class="top"><div class="name"><img src="img/profile.jpg" alt="Picture of Stuart Santos"><div class="fullname">Stuart Santos</div></div><nav><ul><li><a href="index.html">Resume</a></li><li><a href="notes.html">Notes</a></li><li><a href="#" class="selected">My work</a></li></ul></nav></div></header><main><section class="reading-wrapper"><h1 class="sectionTitle">My Work</h1><p class="intro">I have consolidated a variety of projects that showcase different coding abilities in this area. Please contact me if you'd like any additional examples</p></section><section><div class="work"><div class="project"><img class="preview" srcset="img/aig-south-africa-large.jpg 2x, img/aig-south-africa.jpg 1x" src="img/aig-south-africa.jpg" alt="AIG South Africa Preview"><div class="description"><div class="centered"><h2 class="title">AIG South Africa</h2>Mobile-first website coded for AIG South Africa</div></div></div></div></section></main><footer><section class="reading-wrapper">&copy; 2020 Stuart Santos<div class="contact"><a href="mailto:santos.stuart@gmail.com"><span class="icon-mail"></span></a> <a href="https://twitter.com/stuartesantos"><span class="icon-twitter2"></span></a> <a href="https://github.com/stuartsantos"><span class="icon-github"></span></a> <a href="https://www.linkedin.com/in/stuartsantos"><span class="icon-linkedin"></span></a></div></section></footer></body></html>
+    ga('send', 'pageview');</script></head><body><header><div class="top"><div class="name"><a href="/"><img srcset="img/profile.jpg 2x, img/profile-small.jpg 1x" src="img/profile-small.jpg" alt="Picture of Stuart Santos"><div class="fullname">Stuart Santos</div></a></div><nav><ul><li><a href="/"><i class="icofont-business-man"></i> Resume</a></li><li><a href="#" class="selected"><i class="icofont-notebook"></i> Notes</a></li></ul></nav></div></header><main><section class="reading-wrapper"><h1 class="sectionTitle">My Work</h1><p class="intro">I have consolidated a variety of projects that showcase different coding abilities in this area. Please contact me if you'd like any additional examples</p></section><section><div class="work"><div class="project"><img class="preview" srcset="img/aig-south-africa-large.jpg 2x, img/aig-south-africa.jpg 1x" src="img/aig-south-africa.jpg" alt="AIG South Africa Preview"><div class="description"><div class="centered"><h2 class="title">AIG South Africa</h2>Mobile-first website coded for AIG South Africa</div></div></div></div></section></main><footer><section class="reading-wrapper">&copy; 2020 Stuart Santos<div class="contact"><a href="mailto:santos.stuart@gmail.com"><i class="icofont-mail"></i></a> <a href="https://twitter.com/stuartesantos"><i class="icofont-twitter"></i></a> <a href="https://github.com/stuartsantos"><i class="icofont-code"></i></a> <a href="https://www.linkedin.com/in/stuartsantos"><i class="icofont-linkedin"></i></a></div></section></footer></body></html>

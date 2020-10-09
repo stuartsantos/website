@@ -1,4 +1,37 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Stuart Santos | Web Developer | Web Designer</title><link href="../img/favicon.ico" rel="shortcut icon"><link rel="stylesheet" href="../css/styles.css"><meta name="description" content="Just some basic notes about working with Git to keep track of commonly used commands."><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="/js/scripts.min.js" async></script><script type="text/javascript">(function(d) {
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Stuart Santos | Web Developer | Web Designer</title><link href="../img/favicon.ico" rel="shortcut icon"><link rel="stylesheet" href="../css/styles.css"><meta name="description" content="Just some basic notes about working with Git to keep track of commonly used commands."><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><script>/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+    (function( w ){
+      var loadJS = function( src, cb, ordered ){
+        "use strict";
+        var tmp;
+        var ref = w.document.getElementsByTagName( "script" )[ 0 ];
+        var script = w.document.createElement( "script" );
+
+        if (typeof(cb) === 'boolean') {
+          tmp = ordered;
+          ordered = cb;
+          cb = tmp;
+        }
+
+        script.src = src;
+        script.async = !ordered;
+        ref.parentNode.insertBefore( script, ref );
+
+        if (cb && typeof(cb) === "function") {
+          script.onload = cb;
+        }
+        return script;
+      };
+      // commonjs
+      if( typeof module !== "undefined" ){
+        module.exports = loadJS;
+      }
+      else {
+        w.loadJS = loadJS;
+      }
+    }( typeof global !== "undefined" ? global : this ));
+
+    loadJS('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', true);
+    loadJS('/js/scripts.min.js', true);</script><script type="text/javascript">(function(d) {
       var config = {
         kitId: 'mte7xac',
         scriptTimeout: 3000
@@ -10,7 +43,7 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-51744150-1', 'auto');
-    ga('send', 'pageview');</script></head><body><header><div class="top"><div class="name"><img srcset="../img/profile.jpg 2x, ../img/profile-small.jpg 1x" src="../img/profile-small.jpg" alt="Picture of Stuart Santos"><div class="fullname">Stuart Santos</div></div><nav><ul><li><a href="../index.html">Resume</a></li><li><a href="../notes.html">Notes</a></li></ul></nav></div></header><main><section class="reading-wrapper"><h1 class="sectionTitle">Git Basics</h1><div class="notes"><p>When I started getting involved with more complex front-end development work, I was staunchly against using the terminal for anything. I would seek out programs that would allow me to interact with services like GitHub through a graphical user interface rather than having to use the command line. It made no sense to me at the time why anyone would use the command line to carry out any task whatsoever. It seemed like it would be impossible to be more efficient by typing in commands and having to remember folder structures and filenames. However, once I got deeper and deeper into front-end work, it became apparent that in order to fully utilize tools such as GruntJS and Git, (which provided invaluable efficiencies in my overall workflow), I would need to practice my command line skills.</p><p>This post just outlines a few git commands I use within Terminal on a regular basis and is by no means a comprehensive overview of everything you can do with Git. The first thing to start off with is having an existing Git project on your local machine and syncing it up with a new repository on GitHub.</p><h2>Adding an existing git project to GitHub</h2><p>If you already have a project on your computer that has been initialized with git, then you're already halfway there. After you're done adding your files to staging and have created your first commit, go to <a href="http://github.com">GitHub</a> and create a new repository. After navigating to your repository page on GitHub, you will need to copy the URL in the address bar.</p><p>After you've copied the URL, you can go back to Terminal and navigate to the root of your git project. Once there, put the following commands into the Terminal:</p>
+    ga('send', 'pageview');</script></head><body><header><div class="top"><div class="name"><a href="/"><img srcset="../img/profile.jpg 2x, ../img/profile-small.jpg 1x" src="../img/profile-small.jpg" alt="Picture of Stuart Santos"><div class="fullname">Stuart Santos</div></a></div><nav><ul><li><a href="/"><i class="icofont-business-man"></i> Resume</a></li><li><a href="#" class="selected"><i class="icofont-notebook"></i> Notes</a></li></ul></nav></div></header><main><section class="reading-wrapper"><h1 class="sectionTitle">Git Basics</h1><div class="notes"><p>When I started getting involved with more complex front-end development work, I was staunchly against using the terminal for anything. I would seek out programs that would allow me to interact with services like GitHub through a graphical user interface rather than having to use the command line. It made no sense to me at the time why anyone would use the command line to carry out any task whatsoever. It seemed like it would be impossible to be more efficient by typing in commands and having to remember folder structures and filenames. However, once I got deeper and deeper into front-end work, it became apparent that in order to fully utilize tools such as GruntJS and Git, (which provided invaluable efficiencies in my overall workflow), I would need to practice my command line skills.</p><p>This post just outlines a few git commands I use within Terminal on a regular basis and is by no means a comprehensive overview of everything you can do with Git. The first thing to start off with is having an existing Git project on your local machine and syncing it up with a new repository on GitHub.</p><h2>Adding an existing git project to GitHub</h2><p>If you already have a project on your computer that has been initialized with git, then you're already halfway there. After you're done adding your files to staging and have created your first commit, go to <a href="http://github.com">GitHub</a> and create a new repository. After navigating to your repository page on GitHub, you will need to copy the URL in the address bar.</p><p>After you've copied the URL, you can go back to Terminal and navigate to the root of your git project. Once there, put the following commands into the Terminal:</p>
 <code>git remote add origin remote <span class="highlight">repository URL</span></code>
 <p>After that, then just verify with the below command:</p>
 <code>git remote -v</code>
@@ -24,4 +57,4 @@
 <code>git status</code>
 <p>This will enable you to make sure that you are either up to date with the remote repository on GitHub or that you are ahead of it and ready to push your changes to GitHub. If you find that your local repository is behind the remote repository you can use:</p>
 <code>git pull</code>
-<p>Once you execute that command in Terminal, it will pull all of the changes from the most up to date commit so you can be sure you are working on the most recent files.</p><p>That's it and I hope this post helps others as much as it helps to remind me of what to do when working with Git.</p></div></section></main><footer><section class="reading-wrapper">&copy; 2020 Stuart Santos<div class="contact"><a href="mailto:santos.stuart@gmail.com"><span class="icon-mail"></span></a> <a href="https://twitter.com/stuartesantos"><span class="icon-twitter2"></span></a> <a href="https://github.com/stuartsantos"><span class="icon-github"></span></a> <a href="https://www.linkedin.com/in/stuartsantos"><span class="icon-linkedin"></span></a></div></section></footer></body></html>
+<p>Once you execute that command in Terminal, it will pull all of the changes from the most up to date commit so you can be sure you are working on the most recent files.</p><p>That's it and I hope this post helps others as much as it helps to remind me of what to do when working with Git.</p></div></section></main><footer><section class="reading-wrapper">&copy; 2020 Stuart Santos<div class="contact"><a href="mailto:santos.stuart@gmail.com"><i class="icofont-mail"></i></a> <a href="https://twitter.com/stuartesantos"><i class="icofont-twitter"></i></a> <a href="https://github.com/stuartsantos"><i class="icofont-code"></i></a> <a href="https://www.linkedin.com/in/stuartsantos"><i class="icofont-linkedin"></i></a></div></section></footer></body></html>

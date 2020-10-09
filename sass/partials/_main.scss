@@ -1,6 +1,13 @@
 
 /***************Main******************/
 
+main {
+  margin-top: 100px;
+  a:hover {
+    text-decoration: underline;
+  }
+} 
+
 section {
 	margin: 1em auto;
 	width: 90%;
@@ -44,6 +51,7 @@ aside {
     display: inline-block;
     float: right;
     @include flex(1);
+    text-align: right;
   }
 }
 .dates div {

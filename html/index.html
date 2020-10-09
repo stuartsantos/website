@@ -8,8 +8,42 @@
   <meta name="description" content="This is the website of Stuart Santos, a web developer and designer with a background in Front End Development, UX, and UI work.">
   <meta name="google-site-verification" content="eKF_i70huOSGK6BUZpYdKIoTy0ihYUoZNxWG_HIYPCc" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/js/scripts.min.js" async></script>
+  <script>
+    /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+    (function( w ){
+      var loadJS = function( src, cb, ordered ){
+        "use strict";
+        var tmp;
+        var ref = w.document.getElementsByTagName( "script" )[ 0 ];
+        var script = w.document.createElement( "script" );
+
+        if (typeof(cb) === 'boolean') {
+          tmp = ordered;
+          ordered = cb;
+          cb = tmp;
+        }
+
+        script.src = src;
+        script.async = !ordered;
+        ref.parentNode.insertBefore( script, ref );
+
+        if (cb && typeof(cb) === "function") {
+          script.onload = cb;
+        }
+        return script;
+      };
+      // commonjs
+      if( typeof module !== "undefined" ){
+        module.exports = loadJS;
+      }
+      else {
+        w.loadJS = loadJS;
+      }
+    }( typeof global !== "undefined" ? global : this ));
+
+    loadJS('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', true);
+    loadJS('/js/scripts.min.js', true);
+  </script>
   <script type="text/javascript">
     (function(d) {
       var config = {
@@ -32,16 +66,20 @@
   <header>
     <div class="top">
       <div class="name">
-        <img srcset="img/profile.jpg 2x, img/profile-small.jpg 1x" src="img/profile-small.jpg" alt="Picture of Stuart Santos">
-        <h1>Stuart Santos</h1>
+        <a href="/">
+          <img srcset="img/profile.jpg 2x, img/profile-small.jpg 1x" src="img/profile-small.jpg" alt="Picture of Stuart Santos">
+          <h1>Stuart Santos</h1>
+        </a>
       </div>
       <nav>
         <ul>
-          <li><a href="#" class="selected">Resume</a></li>
-          <li><a href="notes">Notes</a></li>
+          <li><a href="#" class="selected"><i class="icofont-business-man"></i> Resume</a></li>
+          <li><a href="notes"><i class="icofont-notebook"></i> Notes</a></li>
         </ul>
       </nav>
     </div>
+  </header>
+  <main>
     <nav class="links">
       <ul>
         <li><a href="#skills">Skills</a></li>
@@ -50,8 +88,6 @@
         <li><a href="#other">Other</a></li>
       </ul>
     </nav>
-  </header>
-  <main>
     <section id="skills">
       <h2>Skills</h2>
       <h3>HTML, CSS, Javascript, JQuery, Sass, Compass, GruntJS, Photoshop, Illustrator, SiteCatalyst, CMS (Tridion), Salesforce, Responsys, Eloqua, Cheetahmail</h3>
@@ -140,10 +176,10 @@
   <footer>
     <section>&copy; 2020 Stuart Santos
       <div class="contact">
-        <a href="mailto:santos.stuart@gmail.com"><span class="icon-mail"></span></a>
-        <a href="https://twitter.com/stuartesantos"><span class="icon-twitter2"></span></a>
-        <a href="https://github.com/stuartsantos"><span class="icon-github"></span></a>
-        <a href="https://www.linkedin.com/in/stuartsantos"><span class="icon-linkedin"></span></a>
+        <a href="mailto:santos.stuart@gmail.com"><i class="icofont-mail"></i></a>
+        <a href="https://twitter.com/stuartesantos"><i class="icofont-twitter"></i></a>
+        <a href="https://github.com/stuartsantos"><i class="icofont-code"></i></a>
+        <a href="https://www.linkedin.com/in/stuartsantos"><i class="icofont-linkedin"></i></a>
       </div>
     </section>
   </footer>

@@ -6,19 +6,30 @@
 	color: #fff;
 	text-align: center;
 	box-shadow: 0 -3px 10px rgba(0,0,0,.2) inset;
-  @include breakpoint(tablet) {
-    @include flexbox;
+  transition: all .2s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include flexbox;
+  @include breakpoint(tablet) {   
     text-align: left;
     align-items: center;
   }
-  a {
+  &.scroll-up {
+    transform: translateY(-99px);
+  }
+  nav a {
     color: #fff;
     display: inline-block;
     padding: 1em 1em .5em 1em;
     transition: .25s;
     max-width: 100%;
+    font-size: 0.8em;
+    @include breakpoint(tablet) {
+      font-size: 1em;
+    }
     &:hover {
-    	color: #eee;
+    	border-bottom: 2px solid #fff;
     }
   }
   .selected {
@@ -28,17 +39,36 @@
   }
   ul {
     @include flexbox();
+    align-items: center;
     width: 100%;
+    height: 100%;
     li {
       @include flex(1);
       margin-bottom: 1em;
+      text-align: center;
     }
   }
 }
 .name {
+  @include flex(1);
+  font-size: .75em;
+  vertical-align: middle;
+  h1, .fullname {
+    margin-top: .4em;
+    display: inline-block;
+    @include breakpoint(tablet) {
+      margin-top: 0;
+    }
+  }
+  a {
+    color: #fff;
+    &:hover {
+    border-bottom: none;
+  }
+  }
   @include breakpoint(tablet) {
-    @include flex(1);
     margin-left: 4em;
+    font-size: 1em;
   }
 }
 header img {
@@ -47,12 +77,11 @@ header img {
 	margin: 10px;
 }
 nav {
-  @include breakpoint(tablet) {
     @include flex(1);
-  }
 }
 .links {
 	margin: 1em;
+  background-color: #fff;
 	ul {
 		@include flexbox();
 		width: 100%;
@@ -71,7 +100,6 @@ nav {
 				padding: .25em;
 				display: inline-block;
 				width: 100%;
-				-webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
   			transition: all .2s;
   			font-family: $font-sans;
   			font-size: .9em;
