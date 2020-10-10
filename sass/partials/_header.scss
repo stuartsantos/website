@@ -69,6 +69,7 @@
   @include breakpoint(tablet) {
     margin-left: 4em;
     font-size: 1em;
+    @include flex(2);
   }
 }
 header img {
