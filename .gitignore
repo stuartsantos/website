@@ -2,3 +2,4 @@
 node_modules
 *.css.map
 bower_components
+.DS_Store
