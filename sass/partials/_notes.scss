@@ -5,16 +5,19 @@
 }
 
 .reading-wrapper {
+	width: 60ch;
+	max-width: 90%;
+	text-align: justify;
 	@include breakpoint(sub-tablet) {
-		width: 75%;
+		max-width: 75%;
 	}
 	@include breakpoint(tablet) {
-		width: 65%;
+		max-width: 65%;
 		font-size: 1.15em;
 		line-height: 1.4;
 	}
 	@include breakpoint(desktop) {
-		width: 50%;
+		max-width: 50%;
 		font-size: 1.2em;
 		letter-spacing: .01rem;
 		line-height: 1.5;
