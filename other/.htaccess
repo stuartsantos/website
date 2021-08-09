@@ -112,6 +112,9 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80 
 RewriteRule ^(.*)$ https://stuartsantos.com/$1 [R=301,L]
 
+RewriteCond %{THE_REQUEST} /([^.]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
 Options +MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
