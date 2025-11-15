@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  // Load browser-sync
+  const browserSync = require('browser-sync').create();
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -28,32 +31,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    htmlmin: {                                     // Task
-      multiple: {
-        options: {                                 // Target options
-          removeComments: true,
-          collapseWhitespace: true
-        },                                // Target
-        files: [{                                  // Dictionary of files
-          expand: true,
-          cwd: 'html',                             // Project root
-          src: ['*.html', '**/*.html'],                        // Source
-          dest: 'min/'                            // Destination
-        }]
-      }
-    },
-    criticalcss: {
-      custom: {
-        options: {
-          url: "http://localhost:4000",
-          width: 1200,
-          height: 900,
-          outputfile: "min/css/critical.css",
-          filename: "min/css/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
-          buffer: 800*1024
-        }
-      }
-    },
     connect: {
       server: {
         options: {
@@ -73,21 +50,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['html/*.html', 'html/**/*.html'],
-        tasks: ['newer:htmlmin']
-      }
-    },
-    browserSync: {
-      bsFiles: {
-        src : [
-          'min/html/*.html',
-          'min/html/**/*.html',
-          'min/js/*.js',
-          'min/css/*.css'
-        ]
-      },
-      options: {
-          watchTask: true,
-          server: './min'
+        tasks: []
       }
     }
   });
@@ -95,14 +58,26 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-criticalcss');
   grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-connect');
+
+  // BrowserSync task
+  grunt.registerTask('browserSync', function() {
+    const done = this.async();
+    browserSync.init({
+      server: './min',
+      files: [
+        'min/html/*.html',
+        'min/html/**/*.html',
+        'min/js/*.js',
+        'min/css/*.css'
+      ],
+      watchTask: true
+    });
+    done();
+  });
 
   // Default task(s).
   grunt.registerTask('default', ['browserSync', 'watch']);
-  grunt.registerTask('critical', ['connect', 'criticalcss']);
 
 };
